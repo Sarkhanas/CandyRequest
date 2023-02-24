@@ -1,0 +1,14 @@
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\CandyRequest.exe.config
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\CandyRequest.exe
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\CandyRequest.pdb
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.AssemblyReference.cache
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.BasketScreen.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.LoadingScreen.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.MenuScreen.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.OrderScreen.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.ProductProfile.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.Properties.Resources.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.GenerateResource.cache
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CoreCompileInputs.cache
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.exe
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.pdb
