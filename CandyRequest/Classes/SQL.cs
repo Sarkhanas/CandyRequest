@@ -214,5 +214,32 @@ namespace CandyRequest.Classes
             conn.Close();
         }
 
+        public static void updateInfo(string database, string id ,List<string> names, List<string> values)
+        {
+            conn.Open();
+
+            /*string sql = "insert into turists (SecondName, FirstName, Patronymic) values(" +
+                "\'" + secondName + "\', " +
+                "\'" + firstName + "\', " +
+                "\'" + Patronimic +
+                "\')";*/
+
+            database = database.ToLower();
+
+            string sql = "update " + database + " set ";
+
+            for (int i = 0; i < names.Count; i++)
+                if (i != names.Count - 1)
+                    sql += names[i] + " = \'" + values[i] + "\',";
+                else sql += names[i] + " = \'" + values[i] + "\' where ";
+
+            sql += "_id = \'" + id +"\';";
+
+            comand = new MySqlCommand(sql, conn);
+            int res = comand.ExecuteNonQuery();
+
+            conn.Close();
+        }
+
     }
 }
