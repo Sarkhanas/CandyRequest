@@ -9,12 +9,12 @@ namespace CandyRequest.Classes
 {
     class SQL
     {
-        public MySqlCommand comand;
-        public const string connstr = "server=localhost;user=root;database=bdtur_firm;password=9573541@.y;";
+        public static MySqlCommand comand;
+        public static string connstr = "server=localhost;user=root;database=candys;password=9573541@.y;";
 
-        public MySqlConnection conn = new MySqlConnection(connstr);
+        public static MySqlConnection conn = new MySqlConnection(connstr);
 
-        public List<Person> searchInfo(string database)
+        public static List<Person> searchInfo(string database)
         {
             database = database.ToLower();
             List<Person> list = new List<Person>();
@@ -31,12 +31,12 @@ namespace CandyRequest.Classes
                 case "basket":
                     while (reader.Read())
                     {
-                        list.Add(new Basket
+                        list.Add(new Basket(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            numOfProd = reader.GetString(1),
-                            price = reader.GetString(2)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1),
+                            reader.GetString(2)
+                        }));
                     }
                     reader.Close();
                     break;
@@ -44,11 +44,11 @@ namespace CandyRequest.Classes
                 case "grade":
                     while (reader.Read())
                     {
-                        list.Add(new Grade
+                        list.Add(new Grade(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            description = reader.GetString(1)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1)
+                        }));
                     }
                     reader.Close();
                     break;
@@ -56,15 +56,15 @@ namespace CandyRequest.Classes
                 case "holiday":
                     while (reader.Read())
                     {
-                        list.Add(new Holiday
+                        list.Add(new Holiday(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            name = reader.GetString(1),
-                            description = reader.GetString(2),
-                            startDate = reader.GetString(3),
-                            endDate = reader.GetString(4),
-                            id_sale = reader.GetString(5)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5)
+                        }));
                     }
                     reader.Close();
                     break;
@@ -72,17 +72,18 @@ namespace CandyRequest.Classes
                 case "order":
                     while (reader.Read())
                     {
-                        list.Add(new Order
+                        list.Add(new Order(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            FIO = reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3),
-                            Adress = reader.GetString(4),
-                            Telephone = reader.GetString(5),
-                            Mail = reader.GetString(6),
-                            Obtain = reader.GetString(7),
-                            Payment = reader.GetString(8),
-                            id_busket = reader.GetString(9)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5),
+                            reader.GetString(6),
+                            reader.GetString(7),
+                            reader.GetString(8),
+                            reader.GetString(9)
+
+                        }));
                     }
                     reader.Close();
                     break;
@@ -90,17 +91,18 @@ namespace CandyRequest.Classes
                 case "orders":
                     while (reader.Read())
                     {
-                        list.Add(new Order
+                        list.Add(new Order(new List<string>()
                         {
-                            id = reader.GetString(0),
-                            FIO = reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3),
-                            Adress = reader.GetString(4),
-                            Telephone = reader.GetString(5),
-                            Mail = reader.GetString(6),
-                            Obtain = reader.GetString(7),
-                            Payment = reader.GetString(8),
-                            id_busket = reader.GetString(9)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5),
+                            reader.GetString(6),
+                            reader.GetString(7),
+                            reader.GetString(8),
+                            reader.GetString(9)
+
+                        }));
                     }
                     reader.Close();
                     break;
@@ -108,29 +110,30 @@ namespace CandyRequest.Classes
                 case "product":
                     while (reader.Read())
                     {
-                        list.Add(new Product
+                        list.Add(new Product(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            id_holiday = reader.GetString(1),
-                            name = reader.GetString(2),
-                            id_grade = reader.GetString(3),
-                            price = reader.GetString(4),
-                            image = reader.GetString(5),
-                            description = reader.GetString(6),
-                            id_busket = reader.GetString(7)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1),
+                            reader.GetString(2),
+                            reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5),
+                            reader.GetString(6),
+                            reader.GetString(7)
+                        }));
                     }
                     reader.Close();
                     break;
 
                 case "sale":
                     while (reader.Read())
+ 
                     {
-                        list.Add(new Sale
+                        list.Add(new Sale(new List<string>() 
                         {
-                            id = reader.GetString(0),
-                            procent = reader.GetString(1)
-                        });
+                            reader.GetString(0),
+                            reader.GetString(1)                        
+                        }));
                     }
                     reader.Close();
                     break;
@@ -141,7 +144,17 @@ namespace CandyRequest.Classes
             return list;
         }
 
-        public void deleteInfo(string database, List<string> names, List<string> values)
+        public static string searchCommand(string database)
+        {
+            database = database.ToLower();
+            List<Person> list = new List<Person>();
+
+            string sql = "SELECT * FROM " + database + ";";
+
+            return sql;
+        }
+
+        public static void deleteInfo(string database, List<string> names, List<string> values)
         {
 
             database = database.ToLower();
@@ -163,7 +176,7 @@ namespace CandyRequest.Classes
             conn.Close();
         }
 
-        public void addInfo(string database, List<string> names, List<string> values)
+        public static void addInfo(string database, List<string> names, List<string> values)
         {
             conn.Open();
 
@@ -190,9 +203,9 @@ namespace CandyRequest.Classes
             for (int i = 0; i < values.Count; i++)
             {
                 if (i != values.Count - 1)
-                    sql += values + ",";
+                    sql += "\'" + values[i] + "\',";
                 else
-                    sql += values + ");";
+                    sql += "\'" + values[i] + "\');";
             }
 
             comand = new MySqlCommand(sql, conn);

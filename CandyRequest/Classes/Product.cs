@@ -16,5 +16,30 @@ namespace CandyRequest.Classes
         public string image { get; set; }
         public string description { get; set; }
         public string id_busket { get; set; }
+
+        public Product()
+        {
+            
+        }
+
+        public Product(List<string> values)
+        {
+            id = values[0];
+            id_holiday = values[1];
+            name = values[2];
+            id_grade = values[3];
+            price = values[4];
+            description = values[5];
+            id_busket = values[6];
+        }
+
+        public override List<string> retValues()
+        {
+            return new List<string>()
+            {
+                id, id_holiday, name, id_grade, price,
+                image, description, id_busket
+            };
+        }
     }
 }

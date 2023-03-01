@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CandyRequest.Classes
 {
-    class Person
+    abstract class Person
     {
         public string id { get; set; }
+
+        public abstract List<string> retValues();
     }
 }

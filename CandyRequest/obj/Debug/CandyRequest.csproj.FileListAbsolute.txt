@@ -38,3 +38,43 @@ D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\System.Numerics.Vector
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.AdminPanel.resources
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CopyComplete
+j:\Games\CandyRequest\CandyRequest\bin\Debug\CandyRequest.exe.config
+j:\Games\CandyRequest\CandyRequest\bin\Debug\CandyRequest.exe
+j:\Games\CandyRequest\CandyRequest\bin\Debug\CandyRequest.pdb
+j:\Games\CandyRequest\CandyRequest\bin\Debug\BouncyCastle.Crypto.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\Google.Protobuf.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Compression.LZ4.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Compression.LZ4.Streams.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Hash.xxHash.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\MySql.Data.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\Newtonsoft.Json.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Buffers.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Memory.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Numerics.Vectors.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\ZstdNet.dll
+j:\Games\CandyRequest\CandyRequest\bin\Debug\BouncyCastle.Crypto.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\Google.Protobuf.pdb
+j:\Games\CandyRequest\CandyRequest\bin\Debug\Google.Protobuf.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Compression.LZ4.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Compression.LZ4.Streams.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\K4os.Hash.xxHash.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\MySql.Data.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\Newtonsoft.Json.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Buffers.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Memory.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Numerics.Vectors.xml
+j:\Games\CandyRequest\CandyRequest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.AssemblyReference.cache
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.AdminPanel.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.BasketScreen.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.LoadingScreen.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.MenuScreen.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.OrderScreen.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.ProductProfile.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.Properties.Resources.resources
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.GenerateResource.cache
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CoreCompileInputs.cache
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CopyComplete
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.exe
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.pdb

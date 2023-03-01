@@ -22,6 +22,9 @@ namespace CandyRequest
         public OrderScreen()
         {
             InitializeComponent();
+
+            obtain.SelectedIndex = 0;
+            payment.SelectedIndex = 0;
         }
 
         private void OrderScreen_FormClosed(object sender, FormClosedEventArgs e)
@@ -36,6 +39,21 @@ namespace CandyRequest
             admin = Newtonsoft.Json.JsonConvert.DeserializeObject<Admin>(json);
             int count = 0;
 
+            List<Person> persons = SQL.searchInfo("basket");
+            List<Basket> baskets = new List<Basket>();
+
+            foreach(var person in persons)
+            {
+                if (person is Basket)
+                {
+                    baskets.Add(new Basket(person.retValues()));
+                }
+            }
+
+            SQL.addInfo("basket",
+                new List<string>() { "_id", "numOfProd", "price" },
+                new List<string>() { (baskets[baskets.Count - 1].id + 1).ToString(), "0", "0"});
+
             foreach (var box in textBoxes)
             {
                 if (box.Text == admin.FIO)
@@ -49,10 +67,35 @@ namespace CandyRequest
                 this.Enabled = false;
                 adminPanel.Enabled = true;
                 adminPanel.Visible = true;
+            } else
+            {
+                SQL.addInfo("orders", 
+                    new List<string>() {
+                        "lastname", "firstname", "patronymic", "address", "telephone", "mail", "obtain", "payment", "id_basket"
+                    },
+                    new List<string>() {
+                        fio.Text.Split(' ')[0] is null ||  fio.Text.Split(' ')[0] == "" ? "" : fio.Text.Split(' ')[0],
+                        fio.Text.Split(' ')[1] is null ||  fio.Text.Split(' ')[1] == "" ? "" : fio.Text.Split(' ')[1],
+                        fio.Text.Split(' ')[2] is null ||  fio.Text.Split(' ')[2] == "" ? "" : fio.Text.Split(' ')[2],
+                        adress.Text, tel.Text, mail.Text, obtain.SelectedItem.ToString(), payment.SelectedItem.ToString(),
+                        (baskets[baskets.Count-1].id + 1).ToString()
+                    }
+                    );
+
+                MenuScreen menuScreen = new MenuScreen();
+                this.Visible = false;
+                this.Enabled = false;
+                menuScreen.Visible = true;
+                menuScreen.Enabled = true;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            readyCheck();
+        }
+
+        public void readyCheck()
         {
             textBoxes = new List<TextBox> { fio, adress, tel, mail };
             int count = 0;
@@ -64,6 +107,11 @@ namespace CandyRequest
                 }
 
             button1.Enabled = count == 4 ? true : false;
+        }
+
+        private void fio_TextChanged(object sender, EventArgs e)
+        {
+            readyCheck();
         }
     }
 }
