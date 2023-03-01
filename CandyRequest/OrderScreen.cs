@@ -47,7 +47,8 @@ namespace CandyRequest
                 AdminPanel adminPanel = new AdminPanel();
                 this.Visible = false;
                 this.Enabled = false;
-                adminPanel.E
+                adminPanel.Enabled = true;
+                adminPanel.Visible = true;
             }
         }
 

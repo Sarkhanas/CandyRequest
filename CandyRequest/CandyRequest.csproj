@@ -95,6 +95,8 @@
     </Compile>
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\Basket.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\SQL.cs" />
     <Compile Include="Classes\Grade.cs" />
     <Compile Include="Classes\Holiday.cs" />
     <Compile Include="Classes\Sale.cs" />

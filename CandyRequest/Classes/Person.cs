@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CandyRequest.Classes
 {
-    class Grade : Person
+    class Person
     {
         public string id { get; set; }
-        public string description { get; set; }
     }
 }

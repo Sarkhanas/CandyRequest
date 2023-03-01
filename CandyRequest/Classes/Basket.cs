@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CandyRequest.Classes
 {
-    class Basket
+    class Basket : Person
     {
+        public string id { get; set; }
+        public string numOfProd { get; set; }
+        public string price { get; set; }
     }
 }
