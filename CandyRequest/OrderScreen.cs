@@ -50,10 +50,6 @@ namespace CandyRequest
                 }
             }
 
-            SQL.addInfo("basket",
-                new List<string>() { "_id", "numOfProd", "price" },
-                new List<string>() { (baskets[baskets.Count - 1].id + 1).ToString(), "0", "0"});
-
             foreach (var box in textBoxes)
             {
                 if (box.Text == admin.FIO)
@@ -62,6 +58,10 @@ namespace CandyRequest
 
             if (count == 4)
             {
+                SQL.addInfo("basket",
+                new List<string>() { "_id", "numOfProd", "price" },
+                new List<string>() { (int.Parse(baskets[baskets.Count - 1].id) + 1).ToString(), "0", "0" });
+
                 AdminPanel adminPanel = new AdminPanel();
                 this.Visible = false;
                 this.Enabled = false;
