@@ -78,7 +78,7 @@ namespace CandyRequest
                         fio.Text.Split(' ')[1] is null ||  fio.Text.Split(' ')[1] == "" ? "" : fio.Text.Split(' ')[1],
                         fio.Text.Split(' ')[2] is null ||  fio.Text.Split(' ')[2] == "" ? "" : fio.Text.Split(' ')[2],
                         adress.Text, tel.Text, mail.Text, obtain.SelectedItem.ToString(), payment.SelectedItem.ToString(),
-                        (baskets[baskets.Count-1].id + 1).ToString()
+                        (int.Parse(baskets[baskets.Count-1].id) + 1).ToString()
                     }
                     );
 
