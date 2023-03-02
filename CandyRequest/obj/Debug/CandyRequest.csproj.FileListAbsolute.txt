@@ -6,7 +6,6 @@ D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.BasketScr
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.LoadingScreen.resources
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.MenuScreen.resources
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.OrderScreen.resources
-D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.ProductProfile.resources
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.Properties.Resources.resources
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.GenerateResource.cache
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CoreCompileInputs.cache
@@ -24,7 +23,6 @@ D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\System.Memory.dll
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\System.Numerics.Vectors.dll
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\ZstdNet.dll
-D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\BouncyCastle.Crypto.xml
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\Google.Protobuf.pdb
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\Google.Protobuf.xml
 D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\K4os.Compression.LZ4.xml
@@ -78,3 +76,6 @@ j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CopyComplete
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.exe
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.pdb
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.WaitingProfile.resources
+d:\Daniil\DB and DBCS\CandyRequest\CandyRequest\obj\Debug\CandyRequest.WaitingProfile.resources
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\itextsharp.dll
+D:\Daniil\DB and DBCS\CandyRequest\CandyRequest\bin\Debug\itextsharp.xml

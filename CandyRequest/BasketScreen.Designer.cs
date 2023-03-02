@@ -29,29 +29,31 @@ namespace CandyRequest
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.submitBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.saveBillBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(17, 16);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(575, 235);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(767, 289);
             this.dataGridView1.TabIndex = 0;
             // 
             // submitBtn
             // 
-            this.submitBtn.Location = new System.Drawing.Point(506, 331);
+            this.submitBtn.Location = new System.Drawing.Point(675, 407);
+            this.submitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(82, 23);
+            this.submitBtn.Size = new System.Drawing.Size(109, 28);
             this.submitBtn.TabIndex = 1;
             this.submitBtn.Text = "Подтвердить";
             this.submitBtn.UseVisualStyleBackColor = true;
@@ -59,52 +61,61 @@ namespace CandyRequest
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(13, 255);
+            this.clearBtn.Location = new System.Drawing.Point(17, 314);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.Size = new System.Drawing.Size(100, 28);
             this.clearBtn.TabIndex = 2;
             this.clearBtn.Text = "Очистить";
             this.clearBtn.UseVisualStyleBackColor = true;
             // 
             // saveBillBtn
             // 
-            this.saveBillBtn.Location = new System.Drawing.Point(12, 284);
+            this.saveBillBtn.Location = new System.Drawing.Point(16, 350);
+            this.saveBillBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveBillBtn.Name = "saveBillBtn";
-            this.saveBillBtn.Size = new System.Drawing.Size(91, 23);
+            this.saveBillBtn.Size = new System.Drawing.Size(121, 28);
             this.saveBillBtn.TabIndex = 3;
             this.saveBillBtn.Text = "Получить чек";
             this.saveBillBtn.UseVisualStyleBackColor = true;
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(13, 331);
+            this.backBtn.Location = new System.Drawing.Point(17, 407);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.Size = new System.Drawing.Size(100, 28);
             this.backBtn.TabIndex = 4;
             this.backBtn.Text = "Назад";
             this.backBtn.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // label1
             // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(267, 324);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
             // 
             // BasketScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.saveBillBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BasketScreen";
             this.Text = "CandyRequest";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BasketScreen_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -115,6 +126,6 @@ namespace CandyRequest
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button saveBillBtn;
         private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
     }
 }

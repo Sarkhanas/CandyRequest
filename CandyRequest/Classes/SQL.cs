@@ -241,17 +241,17 @@ namespace CandyRequest.Classes
                 case "product":
                     while (reader.Read())
                     {
-                        list.Add(new Product(new List<string>()
+                        list.Add(new Product()
                         {
-                            reader.GetString(0),
-                            reader.GetString(1),
-                            reader.GetString(2),
-                            reader.GetString(3),
-                            reader.GetString(4),
-                            reader.GetString(5),
-                            reader.GetString(6),
-                            reader.GetString(7)
-                        }));
+                            id = reader.GetString(0),
+                            id_holiday = reader.GetString(1),
+                            name = reader.GetString(2),
+                            id_grade = reader.GetString(3),
+                            price = reader.GetString(4),
+                            image = reader.GetString(5),
+                            description = reader.GetString(6),
+                            id_busket = reader.GetString(7)
+                        });
                     }
                     reader.Close();
                     break;

@@ -22,7 +22,10 @@ namespace CandyRequest
         List<Label> prices;
         List<Label> adders;
         List<Person> persons;
-        List<Product> products;
+        List<Product> products = new List<Product>();
+        List<Product> prods = new List<Product>();
+        List<string> values;
+        public static string id_basket;
         public int inc = 6;
         public int min = 0;
         public int pageCounter = 1;
@@ -41,7 +44,19 @@ namespace CandyRequest
 
             foreach (var person in persons)
                 if (person is Product)
+                    /*{
+                        Product product = new Product(person.retValues());
+                        products.Add(product);
+                    }*/
                     products.Add(new Product(person.retValues()));
+
+            /* for (int i = 0; i < persons.Count; i++)
+             {
+                 if (persons[i] is Product)
+                 {
+                     products.Add(new Product(persons[i].retValues()));
+                 }
+             }*/
 
             foreach (var pictureBox in pictures)
                 pictureBox.Image = Image.FromFile(path);
@@ -65,8 +80,8 @@ namespace CandyRequest
                 descriptions[i].Visible = true;
                 prices[i].Enabled = true;
                 prices[i].Visible = true;
-                adders[i].Enabled = true;
-                adders[i].Visible = true;
+
+                prods.Add(products[i]);
             }
 
             if (pageCounter >= products.Count / inc)
@@ -92,6 +107,22 @@ namespace CandyRequest
                 arrowLeft.Enabled = true;
                 min += inc;
             }
+
+            int counter = 0;
+            for (int i = 0; i < prods.Count; i++)
+                counter++;
+
+            if (counter > 0)
+                for (int i = 0; i < counter; i++)
+                {
+                    adders[i].Visible = true;
+                    adders[i].Enabled = true;
+                }
+        }
+
+        public void addBasketId(string id)
+        {
+            id_basket = id;
         }
 
         private void MenuScreen_FormClosed(object sender, FormClosedEventArgs e)
@@ -131,6 +162,8 @@ namespace CandyRequest
                 prices[i].Visible = true;
                 adders[i].Enabled = true;
                 adders[i].Visible = true;
+
+                prods.Add(products[i]);
             }
         }
 
@@ -167,7 +200,136 @@ namespace CandyRequest
                 prices[i].Visible = true;
                 adders[i].Enabled = true;
                 adders[i].Visible = true;
+
+                prods.Add(products[i]);
             }
+        }
+
+        private void basketAdd1_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[0].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void basketAdd2_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[1].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void basketAdd3_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[2].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void basketAdd4_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[3].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void basketAdd5_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[4].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void basketAdd6_Click(object sender, EventArgs e)
+        {
+            List<string> values = prods[5].retValues();
+            SQL.addInfo("product",
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>()
+                {
+                    values[1],
+                    values[2],
+                    values[3],
+                    values[4],
+                    values[5],
+                    id_basket
+                }
+                );
+            checkBasket(id_basket);
+        }
+
+        private void checkBasket(string id)
+        {
+            MySqlDataAdapter msda = new MySqlDataAdapter($"SELECT * FROM product WHERE id_basket = \'{id_basket}\'", SQL.conn);
+            DataTable dt = new DataTable();
+            msda.Fill(dt);
+            if (dt.Rows.Count != 0)
+                toBasket.Enabled = true;
+        }
+
+        private void toBasket_Click(object sender, EventArgs e)
+        {
+            BasketScreen basketScreen = new BasketScreen();
+            basketScreen.Visible = true;
+            basketScreen.Enabled = true;
+            basketScreen.id_basket = id_basket;
+            this.Visible = false;
+            this.Enabled = false;
         }
     }
 }

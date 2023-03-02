@@ -29,8 +29,9 @@ namespace CandyRequest.Classes
             name = values[2];
             id_grade = values[3];
             price = values[4];
-            description = values[5];
-            id_busket = values[6];
+            image = values[5];
+            description = values[6];
+            id_busket = values[7];
         }
 
         public override List<string> retValues()

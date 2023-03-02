@@ -74,9 +74,9 @@ namespace CandyRequest
                         "lastname", "firstname", "patronymic", "address", "telephone", "mail", "obtain", "payment", "id_basket"
                     },
                     new List<string>() {
-                        fio.Text.Split(' ')[0] is null ||  fio.Text.Split(' ')[0] == "" ? "" : fio.Text.Split(' ')[0],
-                        fio.Text.Split(' ')[1] is null ||  fio.Text.Split(' ')[1] == "" ? "" : fio.Text.Split(' ')[1],
-                        fio.Text.Split(' ')[2] is null ||  fio.Text.Split(' ')[2] == "" ? "" : fio.Text.Split(' ')[2],
+                        fio.Text.Split(' ')[0] is null ||  fio.Text.Split(' ')[0] == "" ? "null" : fio.Text.Split(' ')[0],
+                        fio.Text.Split(' ')[1] is null ||  fio.Text.Split(' ')[1] == "" ? "null" : fio.Text.Split(' ')[1],
+                        fio.Text.Split(' ')[2] is null ||  fio.Text.Split(' ')[2] == "" ? "null" : fio.Text.Split(' ')[2],
                         adress.Text, tel.Text, mail.Text, obtain.SelectedItem.ToString(), payment.SelectedItem.ToString(),
                         (int.Parse(baskets[baskets.Count-1].id) + 1).ToString()
                     }
@@ -87,6 +87,7 @@ namespace CandyRequest
                 this.Enabled = false;
                 menuScreen.Visible = true;
                 menuScreen.Enabled = true;
+                menuScreen.addBasketId((int.Parse(baskets[baskets.Count - 1].id) + 1).ToString());
             }
         }
 
