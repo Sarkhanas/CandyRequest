@@ -160,14 +160,14 @@ namespace CandyRequest.Classes
             database = database.ToLower();
             conn.Open();
 
-            string sql = "delete from " + database + "where ";
+            string sql = "DELETE FROM " + database + " WHERE ";
 
             for (int i = 0; i < names.Count; i++)
             {
                 if (i == names.Count-1)
-                    sql += names[i] + "= \'" + values[i] + "\';";
+                    sql += database + "." + names[i] + " = \'" + values[i] + "\'";
                 else
-                    sql += names[i] + "= \'" + values[i] + "\' and";
+                    sql += database + "." + names[i] + " = \'" + values[i] + "\' AND ";
             }
 
             comand = new MySqlCommand(sql, conn);

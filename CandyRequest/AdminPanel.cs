@@ -188,187 +188,55 @@ namespace CandyRequest
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView1.Rows.Count - 2;
             switch (dataBaseChoose.SelectedItem.ToString())
             {
                 case "orders":
-                    foreach(var elem in added)
-                    {
-                        List<string> val = elem.retValues();
-                        
-                        SQL.addInfo("orders",
-                            new List<string>() { "_id", "lastname", "firstname", "patronymic",
+                    msda = new MySqlDataAdapter(SQL.searchCommand("orders"), conn);
+                    SQL.addInfo(
+                        "orders",
+                        new List<string>() { "_id", "lastname", "firstname", "patronymic",
                             "address", "telephone", "mail", "obtain", "payment", "id_basket" },
-                            new List<string>() 
-                            {
-                                val[0],
-                                val[1].Split(' ')[0] is null || val[1].Split(' ')[0] == "" ? " ": val[1].Split(' ')[0], 
-                                val[1].Split(' ')[1] is null || val[1].Split(' ')[1] == "" ? " ": val[1].Split(' ')[1], 
-                                val[1].Split(' ')[2] is null || val[1].Split(' ')[2] == "" ? " ": val[1].Split(' ')[2], 
-                                val[2], val[3], val[4], val[5], val[6], val[7] 
-                            });
-                    }
-
-                    foreach (var elem in deleted)
-                    {
-                        List<string> val = elem.retValues();
-                        SQL.deleteInfo("orders",
-                            new List<string>() { "_id", "lastname", "firstname", "patronymic",
-                            "address", "telephone", "mail", "obtain", "payment", "id_basket" },
-                            new List<string>()
-                            {
-                                val[0],
-                                val[1].Split(' ')[0] is null || val[1].Split(' ')[0] == "" ? " ": val[1].Split(' ')[0],
-                                val[1].Split(' ')[1] is null || val[1].Split(' ')[1] == "" ? " ": val[1].Split(' ')[1],
-                                val[1].Split(' ')[2] is null || val[1].Split(' ')[2] == "" ? " ": val[1].Split(' ')[2],
-                                val[2], val[3], val[4], val[5], val[6], val[7]
-                            });
-                    }
-
-
+                        new List<string>()
+                        {
+                                dataGridView1[0,row].Value.ToString(),
+                                dataGridView1[1,row].Value.ToString().Split(' ')[0] is null || dataGridView1[1,row].Value.ToString().Split(' ')[0] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[0],
+                                dataGridView1[1,row].Value.ToString().Split(' ')[1] is null || dataGridView1[1,row].Value.ToString().Split(' ')[1] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[1],
+                                dataGridView1[1,row].Value.ToString().Split(' ')[2] is null || dataGridView1[1,row].Value.ToString().Split(' ')[2] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[2],
+                                dataGridView1[2,row].Value.ToString(),
+                                dataGridView1[3,row].Value.ToString(),
+                                dataGridView1[4,row].Value.ToString(),
+                                dataGridView1[5,row].Value.ToString(),
+                                dataGridView1[6,row].Value.ToString(),
+                                dataGridView1[7,row].Value.ToString(),
+                        }
+                        );
                     break;
 
                 case "basket":
-                    break;
-
-                case "product":
-                    break;
-
-                case "sale":
-                    break;
-
-                case "holiday":
-                    break;
-
-                case "grade":
-                    break;
-            }
-        }
-
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            if (!isFirstLoad)
-            {
-                int row = dataGridView1.Rows.Count - 1;
-                switch (dataBaseChoose.SelectedItem.ToString())
-                {
-                    case "orders":
-                        added.Add(new Order(new List<string>()
-                    {
-                        dataGridView1[0,row].Value.ToString(),
-                        dataGridView1[1,row].Value.ToString() + " " + dataGridView1[2,row].Value.ToString() + " " + dataGridView1[3,row].Value.ToString(),
-                        dataGridView1[4,row].Value.ToString(),
-                        dataGridView1[5,row].Value.ToString(),
-                        dataGridView1[6,row].Value.ToString(),
-                        dataGridView1[7,row].Value.ToString(),
-                        dataGridView1[8,row].Value.ToString(),
-                        dataGridView1[9,row].Value.ToString()
-                    }));
-                        break;
-
-                    case "basket":
-                        added.Add(new Basket(new List<string>()
-                    {
-                        dataGridView1[0,row].Value.ToString(),
-                        dataGridView1[1,row].Value.ToString(),
-                        dataGridView1[2,row].Value.ToString()
-                    }));
-                        break;
-
-                    case "product":
-                        added.Add(new Product(new List<string>()
-                        {
-                            dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString(),
-                            dataGridView1[2,row].Value.ToString(),
-                            dataGridView1[3,row].Value.ToString(),
-                            dataGridView1[4,row].Value.ToString(),
-                            dataGridView1[5,row].Value.ToString(),
-                            dataGridView1[6,row].Value.ToString(),
-                            dataGridView1[7,row].Value.ToString()
-                        }));
-                        break;
-
-                    case "sale":
-                        added.Add(new Sale(new List<string>()
-                        {
-                            dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString()
-                        }));
-                        break;
-
-                    case "holiday":
-                        List<string> startDateList = dataGridView1[3, row].Value.ToString().Split('.').Reverse().ToList<string>();
-                        List<string> endDateList = dataGridView1[4, row].Value.ToString().Split('.').Reverse().ToList<string>();
-                        string startDate = "";
-                        string endDate = "";
-
-                        for (int i = 0; i < startDateList.Count; i++)
-                            if (i != startDateList.Count - 1)
-                                startDate += startDateList[i] + "-";
-                            else startDate += startDateList[i];
-
-                        for (int i = 0; i < endDateList.Count; i++)
-                            if (i != endDateList.Count - 1)
-                                endDate += endDateList[i] + "-";
-                            else endDate += endDateList[i];
-
-
-                        added.Add(new Holiday(new List<string>()
-                        {
-                            dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString(),
-                            dataGridView1[2,row].Value.ToString(),
-                            startDate,
-                            endDate,
-                            dataGridView1[5,row].Value.ToString()
-                        }));
-                        break;
-
-                    case "grade":
-                        added.Add(new Grade(new List<string>()
-                        {
-                            dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString()
-                        }));
-                        break;
-                }
-                isFirstLoad = false;
-            }
-        }
-
-        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            switch (dataBaseChoose.SelectedItem.ToString())
-            {
-                case "orders":
-                    secondPeople = new List<Person>();
-                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                        secondPeople.Add(new Order(new List<string>()
-                        {
-                            dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString() + " " + dataGridView1[2,row].Value.ToString() + " " + dataGridView1[3,row].Value.ToString(),
-                            dataGridView1[4,row].Value.ToString(),
-                            dataGridView1[5,row].Value.ToString(),
-                            dataGridView1[6,row].Value.ToString(),
-                            dataGridView1[7,row].Value.ToString(),
-                            dataGridView1[8,row].Value.ToString(),
-                            dataGridView1[9,row].Value.ToString()
-                        }));
-                    break;
-
-                case "basket":
-                    secondPeople = new List<Person>();                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                        secondPeople.Add(new Basket(new List<string>()
-                        {
+                    msda = new MySqlDataAdapter(SQL.searchCommand("basket"), conn);
+                    SQL.addInfo(
+                        "basket",
+                        new List<string>() { "_id", "numOfProd", "price" },
+                        new List<string>() {
                             dataGridView1[0,row].Value.ToString(),
                             dataGridView1[1,row].Value.ToString(),
                             dataGridView1[2,row].Value.ToString()
-                        }));
+                        });
+
                     break;
 
                 case "product":
-                    secondPeople = new List<Person>();                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                        secondPeople.Add(new Product(new List<string>()
+                    msda = new MySqlDataAdapter(SQL.searchCommand("product"), conn);
+                    SQL.addInfo(
+                        "product",
+                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                        new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
                             dataGridView1[1,row].Value.ToString(),
@@ -376,41 +244,44 @@ namespace CandyRequest
                             dataGridView1[3,row].Value.ToString(),
                             dataGridView1[4,row].Value.ToString(),
                             dataGridView1[5,row].Value.ToString(),
-                            dataGridView1[6,row].Value.ToString(),
-                            dataGridView1[7,row].Value.ToString()
-                        }));
+                            dataGridView1[6,row].Value.ToString()
+                        });
+
                     break;
 
                 case "sale":
-                    secondPeople = new List<Person>();                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                        secondPeople.Add(new Sale(new List<string>()
+                    msda = new MySqlDataAdapter(SQL.searchCommand("sale"), conn);
+                    SQL.addInfo(
+                        "sale",
+                        new List<string>() {"_id", "procent"},
+                        new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
-                            dataGridView1[1,row].Value.ToString()
-                        }));
+                            dataGridView1[1,row].Value.ToString(),
+                        });
                     break;
 
                 case "holiday":
-                    secondPeople = new List<Person>();
-                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                    {
-                        List<string> startDateList = dataGridView1[3, row].Value.ToString().Split('.').Reverse().ToList<string>();
-                        List<string> endDateList = dataGridView1[4, row].Value.ToString().Split('.').Reverse().ToList<string>();
-                        string startDate = "";
-                        string endDate = "";
+                    msda = new MySqlDataAdapter(SQL.searchCommand("holiday"), conn);
+                    List<string> startDateList = dataGridView1[3, row].Value.ToString().Split('.').Reverse().ToList<string>();
+                    List<string> endDateList = dataGridView1[4, row].Value.ToString().Split('.').Reverse().ToList<string>();
+                    string startDate = "";
+                    string endDate = "";
 
-                        for (int i = 0; i < startDateList.Count; i++)
-                            if (i != startDateList.Count - 1)
-                                startDate += startDateList[i] + "-";
-                            else startDate += startDateList[i];
+                    for (int i = 0; i < startDateList.Count; i++)
+                        if (i != startDateList.Count - 1)
+                            startDate += startDateList[i] + "-";
+                        else startDate += startDateList[i];
 
-                        for (int i = 0; i < endDateList.Count; i++)
-                            if (i != endDateList.Count - 1)
-                                endDate += endDateList[i] + "-";
-                            else endDate += endDateList[i];
+                    for (int i = 0; i < endDateList.Count; i++)
+                        if (i != endDateList.Count - 1)
+                            endDate += endDateList[i] + "-";
+                        else endDate += endDateList[i];
 
-
-                        secondPeople.Add(new Holiday(new List<string>()
+                    SQL.addInfo(
+                        "holiday",
+                        new List<string>() { "_id", "name", "description", "startDate", "endDate", "id_sale"},
+                        new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
                             dataGridView1[1,row].Value.ToString(),
@@ -418,42 +289,228 @@ namespace CandyRequest
                             startDate,
                             endDate,
                             dataGridView1[5,row].Value.ToString()
-                        }));
-                    }
+                        });
                     break;
 
                 case "grade":
-                    secondPeople = new List<Person>();                    
-                    for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
-                        secondPeople.Add(new Grade(new List<string>()
+                    msda = new MySqlDataAdapter(SQL.searchCommand("grade"), conn);
+                    SQL.addInfo(
+                        "grade",
+                        new List<string>() { "_id", "description" },
+                        new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
                             dataGridView1[1,row].Value.ToString()
-                        }));
+                        });
                     break;
             }
 
-            int count = 0;
+            dt = new DataTable();
+            msda.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
 
-            for (int i = 0; i < firstPeople.Count; i++)
+        private void changeBtn_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView1.CurrentRow.Index;
+
+            switch (dataBaseChoose.SelectedItem.ToString())
             {
-                for (int j = 0; j < secondPeople.Count; j++)
-                {
-                    if (firstPeople[i] == secondPeople[j])
-                        count++;
-                    if (count == 1)
-                    {
-                        break;
-                    }
-                }
+                case "orders":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("orders"), conn);
+                    SQL.updateInfo(
+                        "orders", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "lastname", "firstname", "patronymic",
+                            "address", "telephone", "mail", "obtain", "payment", "id_basket" },
+                        new List<string>()
+                        {
+                                dataGridView1[0,row].Value.ToString(),
+                                dataGridView1[1,row].Value.ToString().Split(' ')[0] is null || dataGridView1[1,row].Value.ToString().Split(' ')[0] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[0],
+                                dataGridView1[1,row].Value.ToString().Split(' ')[1] is null || dataGridView1[1,row].Value.ToString().Split(' ')[1] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[1],
+                                dataGridView1[1,row].Value.ToString().Split(' ')[2] is null || dataGridView1[1,row].Value.ToString().Split(' ')[2] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[2],
+                                dataGridView1[2,row].Value.ToString(),
+                                dataGridView1[3,row].Value.ToString(),
+                                dataGridView1[4,row].Value.ToString(),
+                                dataGridView1[5,row].Value.ToString(),
+                                dataGridView1[6,row].Value.ToString(),
+                                dataGridView1[7,row].Value.ToString(),
+                        }
+                        );
+                    break;
 
-                if (count != 1)
-                {
-                    deleted.Add(firstPeople[i]);
-                    count = 0;
-                }
+                case "basket":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("basket"), conn);
+                    SQL.updateInfo(
+                        "basket", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "numOfProd", "price" },
+                        new List<string>() {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString(),
+                            dataGridView1[2,row].Value.ToString()
+                        });
+                    break;
+
+                case "product":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("product"), conn);
+                    SQL.updateInfo(
+                        "product", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString(),
+                            dataGridView1[2,row].Value.ToString(),
+                            dataGridView1[3,row].Value.ToString(),
+                            dataGridView1[4,row].Value.ToString(),
+                            dataGridView1[5,row].Value.ToString(),
+                            dataGridView1[6,row].Value.ToString()
+                        });
+                    break;
+
+                case "sale":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("sale"), conn);
+                    SQL.updateInfo(
+                        "sale", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "procent" },
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString()
+                        });
+                    break;
+
+                case "holiday":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("holiday"), conn);
+                    List<string> startDateList = dataGridView1[3, row].Value.ToString().Split('.').Reverse().ToList<string>();
+                    List<string> endDateList = dataGridView1[4, row].Value.ToString().Split('.').Reverse().ToList<string>();
+                    string startDate = "";
+                    string endDate = "";
+
+                    for (int i = 0; i < startDateList.Count; i++)
+                        if (i != startDateList.Count - 1)
+                            startDate += startDateList[i] + "-";
+                        else startDate += startDateList[i];
+
+                    for (int i = 0; i < endDateList.Count; i++)
+                        if (i != endDateList.Count - 1)
+                            endDate += endDateList[i] + "-";
+                        else endDate += endDateList[i];
+
+                    SQL.updateInfo(
+                        "holiday", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "name", "description", "startDate", "endDate", "id_sale" },
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString(),
+                            dataGridView1[2,row].Value.ToString(),
+                            startDate,
+                            endDate,
+                            dataGridView1[5,row].Value.ToString()
+                        });
+                    break;
+
+                case "grade":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("grade"), conn);
+                    SQL.updateInfo(
+                        "grade", dataGridView1[0, row].Value.ToString(),
+                        new List<string>() { "_id", "description" },
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString()
+                        });
+                    break;
             }
-                    
+
+            dt = new DataTable();
+            msda.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            int row = dataGridView1.CurrentRow.Index;
+
+            switch (dataBaseChoose.SelectedItem.ToString())
+            {
+                case "orders":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("orders"), conn);
+                    SQL.deleteInfo(
+                        "orders", 
+                        new List<string>() { "_id" },
+                        new List<string>()
+                        {
+                                dataGridView1[0,row].Value.ToString()
+                        }
+                        );
+                    break;
+
+                case "basket":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("basket"), conn);
+                    SQL.deleteInfo(
+                        "basket",
+                        new List<string>() { "_id"},
+                        new List<string>() {
+                            dataGridView1[0,row].Value.ToString()
+                        });
+                    break;
+
+                case "product":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("product"), conn);
+                    SQL.deleteInfo(
+                        "product",
+                        new List<string>() { "_id"},
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString()
+                        });
+                    break;
+
+                case "sale":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("sale"), conn);
+                    SQL.deleteInfo(
+                        "sale",
+                        new List<string>() { "_id", "procent" },
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString(),
+                            dataGridView1[1,row].Value.ToString()
+                        });
+                    break;
+
+                case "holiday":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("holiday"), conn);
+
+                    SQL.deleteInfo(
+                        "holiday",
+                        new List<string>() { "_id"},
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString()
+                        });
+                    break;
+
+                case "grade":
+                    msda = new MySqlDataAdapter(SQL.searchCommand("grade"), conn);
+                    SQL.deleteInfo(
+                        "grade",
+                        new List<string>() { "_id"},
+                        new List<string>()
+                        {
+                            dataGridView1[0,row].Value.ToString()
+                        });
+                    break;
+            }
+
+            dt = new DataTable();
+            msda.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void AdminPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

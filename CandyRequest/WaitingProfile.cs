@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CandyRequest
 {
-    public partial class ProductProfile : Form
+    public partial class WaitingProfile : Form
     {
-        public ProductProfile()
+        public WaitingProfile()
         {
             InitializeComponent();
         }

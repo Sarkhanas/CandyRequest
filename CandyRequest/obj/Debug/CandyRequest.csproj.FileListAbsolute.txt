@@ -71,10 +71,10 @@ j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.BasketScreen.resources
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.LoadingScreen.resources
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.MenuScreen.resources
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.OrderScreen.resources
-j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.ProductProfile.resources
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.Properties.Resources.resources
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.GenerateResource.cache
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CoreCompileInputs.cache
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.csproj.CopyComplete
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.exe
 j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.pdb
+j:\Games\CandyRequest\CandyRequest\obj\Debug\CandyRequest.WaitingProfile.resources

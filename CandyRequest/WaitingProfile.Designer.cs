@@ -1,7 +1,7 @@
 ﻿
 namespace CandyRequest
 {
-    partial class ProductProfile
+    partial class WaitingProfile
     {
         /// <summary>
         /// Required designer variable.

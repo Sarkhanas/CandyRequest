@@ -108,11 +108,11 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductProfile.cs">
+    <Compile Include="WaitingProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductProfile.Designer.cs">
-      <DependentUpon>ProductProfile.cs</DependentUpon>
+    <Compile Include="WaitingProfile.Designer.cs">
+      <DependentUpon>WaitingProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuScreen.cs">
       <SubType>Form</SubType>
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="OrderScreen.resx">
       <DependentUpon>OrderScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductProfile.resx">
-      <DependentUpon>ProductProfile.cs</DependentUpon>
+    <EmbeddedResource Include="WaitingProfile.resx">
+      <DependentUpon>WaitingProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

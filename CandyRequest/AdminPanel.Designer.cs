@@ -33,6 +33,9 @@ namespace CandyRequest
             this.dataBaseChoose = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.changeBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +46,6 @@ namespace CandyRequest
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(576, 279);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
             // dataBaseChoose
             // 
@@ -77,15 +78,48 @@ namespace CandyRequest
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Подтвердить";
+            this.button1.Text = "В ожидании";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // changeBtn
+            // 
+            this.changeBtn.Location = new System.Drawing.Point(121, 331);
+            this.changeBtn.Name = "changeBtn";
+            this.changeBtn.Size = new System.Drawing.Size(75, 23);
+            this.changeBtn.TabIndex = 4;
+            this.changeBtn.Text = "Обновить";
+            this.changeBtn.UseVisualStyleBackColor = true;
+            this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(222, 331);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 5;
+            this.deleteBtn.Text = "Удалить";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(16, 331);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.TabIndex = 6;
+            this.addBtn.Text = "Добавить";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataBaseChoose);
@@ -93,6 +127,7 @@ namespace CandyRequest
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminPanel";
             this.Text = "CandyRequest|AdminPanel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanel_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,5 +140,8 @@ namespace CandyRequest
         private System.Windows.Forms.ComboBox dataBaseChoose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button changeBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button addBtn;
     }
 }

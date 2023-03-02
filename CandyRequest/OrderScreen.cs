@@ -58,10 +58,6 @@ namespace CandyRequest
 
             if (count == 4)
             {
-                SQL.addInfo("basket",
-                new List<string>() { "_id", "numOfProd", "price" },
-                new List<string>() { (int.Parse(baskets[baskets.Count - 1].id) + 1).ToString(), "0", "0" });
-
                 AdminPanel adminPanel = new AdminPanel();
                 this.Visible = false;
                 this.Enabled = false;
@@ -69,6 +65,10 @@ namespace CandyRequest
                 adminPanel.Visible = true;
             } else
             {
+                SQL.addInfo("basket",
+                new List<string>() { "_id", "numOfProd", "price" },
+                new List<string>() { (int.Parse(baskets[baskets.Count - 1].id) + 1).ToString(), "0", "0" });
+
                 SQL.addInfo("orders", 
                     new List<string>() {
                         "lastname", "firstname", "patronymic", "address", "telephone", "mail", "obtain", "payment", "id_basket"
