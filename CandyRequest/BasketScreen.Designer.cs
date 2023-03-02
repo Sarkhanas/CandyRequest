@@ -42,7 +42,7 @@ namespace CandyRequest
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 16);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(767, 289);
@@ -51,7 +51,7 @@ namespace CandyRequest
             // submitBtn
             // 
             this.submitBtn.Location = new System.Drawing.Point(675, 407);
-            this.submitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.submitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(109, 28);
             this.submitBtn.TabIndex = 1;
@@ -62,32 +62,35 @@ namespace CandyRequest
             // clearBtn
             // 
             this.clearBtn.Location = new System.Drawing.Point(17, 314);
-            this.clearBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearBtn.Margin = new System.Windows.Forms.Padding(4);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(100, 28);
             this.clearBtn.TabIndex = 2;
             this.clearBtn.Text = "Очистить";
             this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // saveBillBtn
             // 
             this.saveBillBtn.Location = new System.Drawing.Point(16, 350);
-            this.saveBillBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveBillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveBillBtn.Name = "saveBillBtn";
             this.saveBillBtn.Size = new System.Drawing.Size(121, 28);
             this.saveBillBtn.TabIndex = 3;
             this.saveBillBtn.Text = "Получить чек";
             this.saveBillBtn.UseVisualStyleBackColor = true;
+            this.saveBillBtn.Click += new System.EventHandler(this.saveBillBtn_Click);
             // 
             // backBtn
             // 
             this.backBtn.Location = new System.Drawing.Point(17, 407);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(4);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(100, 28);
             this.backBtn.TabIndex = 4;
             this.backBtn.Text = "Назад";
             this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // label1
             // 

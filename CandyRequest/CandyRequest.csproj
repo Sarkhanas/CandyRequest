@@ -180,6 +180,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Bills\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

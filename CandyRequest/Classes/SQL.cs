@@ -343,12 +343,6 @@ namespace CandyRequest.Classes
         {
             conn.Open();
 
-            /*string sql = "insert into turists (SecondName, FirstName, Patronymic) values(" +
-                "\'" + secondName + "\', " +
-                "\'" + firstName + "\', " +
-                "\'" + Patronimic +
-                "\')";*/
-
             database = database.ToLower();
 
             string sql = "update " + database + " set ";

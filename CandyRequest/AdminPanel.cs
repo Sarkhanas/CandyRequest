@@ -235,7 +235,7 @@ namespace CandyRequest
                     msda = new MySqlDataAdapter(SQL.searchCommand("product"), conn);
                     SQL.addInfo(
                         "product",
-                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                         new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
@@ -244,7 +244,8 @@ namespace CandyRequest
                             dataGridView1[3,row].Value.ToString(),
                             dataGridView1[4,row].Value.ToString(),
                             dataGridView1[5,row].Value.ToString(),
-                            dataGridView1[6,row].Value.ToString()
+                            dataGridView1[6,row].Value.ToString(),
+                            dataGridView1[7,row].Value.ToString()
                         });
 
                     break;
@@ -354,7 +355,7 @@ namespace CandyRequest
                     msda = new MySqlDataAdapter(SQL.searchCommand("product"), conn);
                     SQL.updateInfo(
                         "product", dataGridView1[0, row].Value.ToString(),
-                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                        new List<string>() { "_id", "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                         new List<string>()
                         {
                             dataGridView1[0,row].Value.ToString(),
@@ -363,7 +364,8 @@ namespace CandyRequest
                             dataGridView1[3,row].Value.ToString(),
                             dataGridView1[4,row].Value.ToString(),
                             dataGridView1[5,row].Value.ToString(),
-                            dataGridView1[6,row].Value.ToString()
+                            dataGridView1[6,row].Value.ToString(),
+                            dataGridView1[7,row].Value.ToString()
                         });
                     break;
 
