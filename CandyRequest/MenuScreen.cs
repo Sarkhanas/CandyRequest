@@ -25,7 +25,7 @@ namespace CandyRequest
         List<Product> products = new List<Product>();
         List<Product> prods = new List<Product>();
         List<string> values;
-        public static string id_basket;
+        public string id_basket = "";
         public int inc = 6;
         public int min = 0;
         public int pageCounter = 1;
@@ -209,7 +209,7 @@ namespace CandyRequest
         {
             List<string> values = prods[0].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image","description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -217,6 +217,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -227,7 +228,7 @@ namespace CandyRequest
         {
             List<string> values = prods[1].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -235,6 +236,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -245,7 +247,7 @@ namespace CandyRequest
         {
             List<string> values = prods[2].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -253,6 +255,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -263,7 +266,7 @@ namespace CandyRequest
         {
             List<string> values = prods[3].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -271,6 +274,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -281,7 +285,7 @@ namespace CandyRequest
         {
             List<string> values = prods[4].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -289,6 +293,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -299,7 +304,7 @@ namespace CandyRequest
         {
             List<string> values = prods[5].retValues();
             SQL.addInfo("product",
-                new List<string>() { "id_holiday", "name", "id_grade", "price", "description", "id_basket" },
+                new List<string>() { "id_holiday", "name", "id_grade", "price", "image", "description", "id_basket" },
                 new List<string>()
                 {
                     values[1],
@@ -307,6 +312,7 @@ namespace CandyRequest
                     values[3],
                     values[4],
                     values[5],
+                    values[6],
                     id_basket
                 }
                 );
@@ -325,11 +331,11 @@ namespace CandyRequest
         private void toBasket_Click(object sender, EventArgs e)
         {
             BasketScreen basketScreen = new BasketScreen();
+            this.Visible = false;
+            this.Enabled = false;
             basketScreen.Visible = true;
             basketScreen.Enabled = true;
             basketScreen.id_basket = id_basket;
-            this.Visible = false;
-            this.Enabled = false;
         }
     }
 }

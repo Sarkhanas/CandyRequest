@@ -205,15 +205,15 @@ namespace CandyRequest
                         new List<string>()
                         {
                                 dataGridView1[0,row].Value.ToString(),
-                                dataGridView1[1,row].Value.ToString().Split(' ')[0] is null || dataGridView1[1,row].Value.ToString().Split(' ')[0] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[0],
-                                dataGridView1[1,row].Value.ToString().Split(' ')[1] is null || dataGridView1[1,row].Value.ToString().Split(' ')[1] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[1],
-                                dataGridView1[1,row].Value.ToString().Split(' ')[2] is null || dataGridView1[1,row].Value.ToString().Split(' ')[2] == "" ? " " : dataGridView1[1,row].Value.ToString().Split(' ')[2],
+                                dataGridView1[1,row].Value.ToString(),
                                 dataGridView1[2,row].Value.ToString(),
                                 dataGridView1[3,row].Value.ToString(),
                                 dataGridView1[4,row].Value.ToString(),
                                 dataGridView1[5,row].Value.ToString(),
                                 dataGridView1[6,row].Value.ToString(),
                                 dataGridView1[7,row].Value.ToString(),
+                                dataGridView1[8,row].Value.ToString(),
+                                dataGridView1[9,row].Value.ToString()
                         }
                         );
                     break;

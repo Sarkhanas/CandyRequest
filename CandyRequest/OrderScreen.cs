@@ -87,7 +87,7 @@ namespace CandyRequest
                 this.Enabled = false;
                 menuScreen.Visible = true;
                 menuScreen.Enabled = true;
-                menuScreen.addBasketId((int.Parse(baskets[baskets.Count - 1].id) + 1).ToString());
+                menuScreen.id_basket = (int.Parse(baskets[baskets.Count - 1].id) + 1).ToString();
             }
         }
 
